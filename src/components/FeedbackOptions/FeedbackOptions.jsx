@@ -5,7 +5,8 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
     return (
         <>{options.map(option =>  
     (<Button 
-      key={option}
+          key={option}
+          name={option}
             onClick={onLeaveFeedback}
             >
        {option}

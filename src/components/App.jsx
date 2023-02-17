@@ -12,12 +12,13 @@ export class App extends Component {
   onLeaveFeedback = e => {
     // console.log(e.target)
     // console.log(e.currentTarget)
-    const value = e.currentTarget.textContent;
-    this.setState({
-      [value]: this.state[value] + 1,
-    });
+    const name = e.target.name;
+    this.setState(prevState => {
+      return {
+        [name]: prevState[name] + 1
+      }
+    })
   }
-
   countTotalFeedback = () => {
     const {good, neutral, bad} = this.state
     return good + neutral + bad;
